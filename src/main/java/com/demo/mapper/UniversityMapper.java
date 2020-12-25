@@ -2,6 +2,7 @@ package com.demo.mapper;
 
 import com.demo.pojo.University;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public interface UniversityMapper {
      * @throws Exception
      */
     @Select("select university_name university_area university_type profession_name from university")
-    public List<University> queryByPro(String professionName, String universityArea) throws Exception;
+    public List<University> queryByPro(@Param("professionName") String professionName,@Param("universityArea") String universityArea) throws Exception;
 
     /**
      * 根据地区、院校类型查询
@@ -34,7 +35,7 @@ public interface UniversityMapper {
      * @throws Exception
      */
     @Select("select university_name university_type profession_name from university")
-    public List<University> queryByColleges(String universityArea, String universityType) throws Exception;
+    public List<University> queryByColleges(@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
     /**
      * 根据专业类别、地区、年份查询
@@ -46,7 +47,7 @@ public interface UniversityMapper {
      * @throws Exception
      */
     @Select("select university_name profession_name admit_grade university_area time from university")
-    public List<University> queryByScore(String classifier, String universityArea, String time) throws Exception;
+    public List<University> queryByScore(@Param("classifier") String classifier,@Param("universityArea") String universityArea,@Param("time") String time) throws Exception;
 
 
 }
