@@ -1,6 +1,7 @@
 package com.demo.service;
 
 import com.demo.pojo.University;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -14,13 +15,13 @@ import java.util.List;
 public interface UniversityService {
     /**
      * 根据院校名称、地区查询
-     *
-     * @param professionName
+     * @param universityName
      * @param universityArea
+     * @param universityType
      * @return
      * @throws Exception
      */
-    public List<University> queryByPro(String professionName, String universityArea) throws Exception;
+    public List<University> queryByPro( String universityName, String universityArea, String universityType) throws Exception;
 
     /**
      * 根据地区、院校类型查询

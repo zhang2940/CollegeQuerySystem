@@ -17,7 +17,7 @@ public class University implements Serializable {
     private String admitGrade;//录取分数线
     private String admitArea;//考生所在地，异地
     private String professionName;//专业名
-    private String classifier;//文理科
-    private String time;//年份，往年的录取分数线
+    private String admitClassifier;//文理科
+    private String admitTime;//年份，往年的录取分数线
 
 }

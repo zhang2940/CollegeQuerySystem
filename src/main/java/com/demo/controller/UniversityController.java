@@ -2,11 +2,14 @@ package com.demo.controller;
 
 import com.demo.pojo.University;
 import com.demo.service.UniversityService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.rmi.MarshalledObject;
 import java.util.List;
 
 /**
@@ -25,24 +28,31 @@ public class UniversityController {
 
     /**
      * 根据院校名称、地区查询
-     *
-     * @param professionName
+     * @param model
+     * @param universityName
      * @param universityArea
+     * @param universityType
+     * @param pageNum
      * @return
      * @throws Exception
      */
-    @RequestMapping("/profession")
-    public String queryByPro(Model model, String professionName, String universityArea) throws Exception {
 
-        //访问业务实现接口，获取到需要的信息
-        List<University> list = universityService.queryByPro(professionName, universityArea);
+  @RequestMapping("/profession")
+    public String queryByPro(Model model, String universityName,String universityArea,String universityType,Integer pageNum) throws Exception {
+      //判断是否获得页码
+      pageNum = pageNum == null ? 1 : pageNum;
+      //启用分页
+      PageHelper.startPage(pageNum, 10);
+      //查询角色数据
+      List<University> list = universityService.queryByPro(universityName, universityArea, universityType);
+      //获得分页相关信息
+      PageInfo<University> pageInfo = new PageInfo(list, 10);
+      //封装模型数据
+      model.addAttribute("list", list);
+      model.addAttribute("pageInfo", pageInfo);
+      return "pages/role/rolelist";
+  }
 
-        //模型封装获取到的数据
-        model.addAttribute("list", list);
-
-        //返回到展示视图界面
-        return "/university/list";
-    }
 
     /**
      * 根据地区、院校类型查询

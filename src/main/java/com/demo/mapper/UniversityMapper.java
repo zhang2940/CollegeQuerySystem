@@ -16,15 +16,18 @@ import java.util.List;
 public interface UniversityMapper {
 
     /**
-     * 根据院校名称、地区查询
+     * 根据院校名称、地区查询,院校类别
      *
-     * @param professionName
+     * @param
      * @param universityArea
      * @return
      * @throws Exception
-     */
-    @Select("select university_name,university_area , university_type,profession_name from university")
-    public List<University> queryByPro(@Param("professionName") String professionName,@Param("universityArea") String universityArea) throws Exception;
+     *//*
+    @Select("select * from university " +
+          "where university_type=#{universityType} and university_area=#{universityArea} and admit_classifier=#{admitClassifier} oder by admit_time desc")*/
+    @Select("select university_name,university_type,university_area,admit_grade,admit_area,profession_name,admit_classifier,admit_time from university " +
+            "where university_Name=#{universityName} and university_area=#{universityArea} and university_type=#{universityType} oder by admit_time desc")
+    public List<University> queryByPro(@Param("universityName") String universityName,@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
     /**
      * 根据地区、院校类型查询
@@ -34,7 +37,7 @@ public interface UniversityMapper {
      * @return
      * @throws Exception
      */
-    @Select("select university_name , university_type , profession_name from university")
+    @Select("select university_name university_type profession_name from university")
     public List<University> queryByColleges(@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
     /**

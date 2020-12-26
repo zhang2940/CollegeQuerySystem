@@ -3,7 +3,11 @@ package com.demo.serviceimpl;
 import com.demo.mapper.UniversityMapper;
 import com.demo.pojo.University;
 import com.demo.service.UniversityService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,15 +27,16 @@ public class UniversityServiceImpl implements UniversityService {
 
     /**
      * 根据院校名称、地区查询
-     *
-     * @param professionName
+     * @param universityName
      * @param universityArea
+     * @param universityType
      * @return
      * @throws Exception
      */
     @Override
-    public List<University> queryByPro(String professionName, String universityArea) throws Exception {
-        return universityMapper.queryByPro(professionName, universityArea);
+    public List<University> queryByPro( String universityName, String universityArea, String universityType) throws Exception {
+
+        return universityMapper.queryByPro(universityName,universityArea,universityType);
     }
 
     /**
