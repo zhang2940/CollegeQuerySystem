@@ -14,7 +14,7 @@ import java.util.List;
 
 public interface UniversityService {
     /**
-     * 根据院校名称、地区查询
+     *
      * @param universityName
      * @param universityArea
      * @param universityType
@@ -24,23 +24,22 @@ public interface UniversityService {
     public List<University> queryByPro( String universityName, String universityArea, String universityType) throws Exception;
 
     /**
-     * 根据地区、院校类型查询
      *
+     * @param professionName
      * @param universityArea
-     * @param universityType
+     * @param
      * @return
      * @throws Exception
      */
-    public List<University> queryByColleges(String universityArea, String universityType) throws Exception;
+    public List<University> queryByColleges(String professionName,String universityArea,String admitTp) throws Exception;
 
     /**
-     * 根据专业类别、地区、年份查询
      *
-     * @param classifier
-     * @param universityArea
-     * @param time
+     * @param universityName
+     * @param professionName
+     * @param admitArea
      * @return
      * @throws Exception
      */
-    public List<University> queryByScore(String classifier, String universityArea, String time) throws Exception;
+    public List<University> queryByScore(String universityName, String professionName, String admitArea) throws Exception;
 }

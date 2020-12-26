@@ -40,29 +40,28 @@ public class UniversityServiceImpl implements UniversityService {
     }
 
     /**
-     * 根据地区、院校类型查询
      *
+     * @param professionName
      * @param universityArea
-     * @param universityType
+     * @param
      * @return
      * @throws Exception
      */
     @Override
-    public List<University> queryByColleges(String universityArea, String universityType) throws Exception {
-        return null;
+    public List<University> queryByColleges(String professionName,String universityArea,String admitTp) throws Exception {
+        return universityMapper.queryByColleges(professionName,universityArea,admitTp);
     }
 
     /**
-     * 根据专业类别、地区、年份查询
      *
-     * @param classifier
-     * @param universityArea
-     * @param time
+     * @param universityName
+     * @param professionName
+     * @param admitArea
      * @return
      * @throws Exception
      */
     @Override
-    public List<University> queryByScore(String classifier, String universityArea, String time) throws Exception {
-        return null;
+    public List<University> queryByScore(String universityName, String professionName, String admitArea) throws Exception {
+        return universityMapper.queryByScore(universityName,professionName,admitArea);
     }
 }

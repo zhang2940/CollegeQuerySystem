@@ -22,35 +22,35 @@ public interface UniversityMapper {
      * @param universityArea
      * @return
      * @throws Exception
-     *//*
+     */
+
     @Select("select * from university " +
-          "where university_type=#{universityType} and university_area=#{universityArea} and admit_classifier=#{admitClassifier} oder by admit_time desc")*/
-    @Select("select university_name,university_type,university_area,admit_grade,admit_area,profession_name,admit_classifier,admit_time from university " +
-            "where university_Name=#{universityName} and university_area=#{universityArea} and university_type=#{universityType} oder by admit_time desc")
+            "where university_Name=#{universityName} and university_area=#{universityArea} and university_type=#{universityType} order by admit_time desc")
     public List<University> queryByPro(@Param("universityName") String universityName,@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
     /**
-     * 根据地区、院校类型查询
      *
+     * @param professionName
      * @param universityArea
-     * @param universityType
+     * @param admitTp
      * @return
      * @throws Exception
      */
-    @Select("select university_name university_type profession_name from university")
-    public List<University> queryByColleges(@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
+    @Select("select university_name,university_type,admit_grade,admit_area,admit_time from university " +
+            "where profession_name=#{professionName} and university_area=#{universityArea} and admit_tp=#{admitTp} order by admit_time desc")
+    public List<University> queryByColleges(@Param("professionName")String professionName,@Param("universityArea") String universityArea,@Param("admitTp") String admitTp) throws Exception;
 
     /**
-     * 根据专业类别、地区、年份查询
      *
-     * @param classifier
-     * @param universityArea
-     * @param time
+     * @param universityName
+     * @param professionName
+     * @param admitArea
      * @return
      * @throws Exception
      */
-    @Select("select university_name profession_name admit_grade university_area time from university")
-    public List<University> queryByScore(@Param("classifier") String classifier,@Param("universityArea") String universityArea,@Param("time") String time) throws Exception;
+    @Select("select university_type,university_area,admit_tp,admit_time from university " +
+            "where university_name=#{universityName} and profession_name=#{professionName} and admit_area=#{admitArea} order by admit_time desc")
+    public List<University> queryByScore(@Param("universityName") String universityName,@Param("professionName") String professionName,@Param("admitArea") String admitArea) throws Exception;
 
 
 }
