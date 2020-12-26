@@ -23,7 +23,7 @@ public interface UniversityMapper {
      * @return
      * @throws Exception
      */
-    @Select("select university_name university_area university_type profession_name from university")
+    @Select("select university_name,university_area , university_type,profession_name from university")
     public List<University> queryByPro(@Param("professionName") String professionName,@Param("universityArea") String universityArea) throws Exception;
 
     /**
@@ -34,7 +34,7 @@ public interface UniversityMapper {
      * @return
      * @throws Exception
      */
-    @Select("select university_name university_type profession_name from university")
+    @Select("select university_name , university_type , profession_name from university")
     public List<University> queryByColleges(@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
     /**
