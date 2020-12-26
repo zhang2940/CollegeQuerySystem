@@ -50,7 +50,7 @@
 						<div class="search" style="text-align: left; margin-left: 10px;">
 							<p style="font-size: 15px;"><i class="fa fa-search lg"></i>&emsp;大学搜索</p>
 						</div>
-						<form action="" method="post">
+						<form action="/colleges" method="post">
 							<input style="width: 122px;border: 1px darkgray solid;" type="text" name="university" placeholder="院校名称" />
 							<br>
 							<select name="city" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
@@ -69,16 +69,16 @@
 						<div class="search" style="text-align: left; margin-left: 10px;">
 							<p style="font-size: 15px;"><i class="fa fa-search lg"></i>&emsp;专业搜索</p>
 						</div>
-						<form action="" method="post">
+						<form action="/profession" method="post">
 							<input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="university" placeholder="院校名称" />
 							<br>
 							<select name="city" style="width: 125px;border: whitesmoke 1px solid;color: darkgray;">
-								<option>北京</option>
+								<option hidden="hidden">请选择地区</option>
 							</select>
 							<br>
-							<select style="color: darkgray;width: 125px;border: 1px #EEEEEE solid;" name="univerKind">
-								<option hidden="hidden">请选择种类</option>
-								<option value="">本科</option>
+							<select style="color: darkgray;width: 125px;border: 1px #EEEEEE solid;" name="profression">
+								<option hidden="hidden">请选择专业</option>
+								<option value="">计算机应用技术</option>
 							</select>
 							<br>
 							<input type="submit" value="搜索" style="color: white;background-color:  rgb(197,30,11);width: 122px;border:1px whitesmoke solid;margin-top: 5px;"/>

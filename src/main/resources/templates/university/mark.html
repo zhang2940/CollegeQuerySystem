@@ -53,12 +53,12 @@
         <input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="university" placeholder="院校名称" />
         <br>
         <select name="city" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
-            <option>北京</option>
+            <option hidden="hidden">请选地区</option>
         </select>
         <br>
         <select style="width: 125px;color: darkgray;border: 1px #EEEEEE solid;" name="univerKind">
-            <option hidden="hidden">请选择种类</option>
-            <option value="">本科</option>
+            <option hidden="hidden">专业名称</option>
+
         </select>
         <br>
         <input type="submit" value="搜索" style="color: white;background-color:  rgb(197,30,11);width: 122px;border:1px whitesmoke solid;margin-top: 5px;"/>
@@ -79,13 +79,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="college,collegeStatus:${list}">
-            <td th:text="${collegeStatus.count}"></td>
-            <td th:text="${college.universityName}"></td>
-            <td th:text="${college.universityType}"></td>
-            <td th:text="${college.professionName}"></td>
-            <td th:text="${college.admitArea}"></td>
-        </tr>
+        <!--        <tr th:each="college,collegeStatus:${list}">-->
+        <!--            <td th:text="${collegeStatus.count}"></td>-->
+        <!--            <td th:text="${college.universityName}"></td>-->
+        <!--            <td th:text="${college.universityType}"></td>-->
+        <!--            <td th:text="${college.professionName}"></td>-->
+        <!--            <td th:text="${college.admitArea}"></td>-->
+        <!--        </tr>-->
         </tbody>
     </table>
 </div>
