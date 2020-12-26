@@ -2,9 +2,9 @@ package com.demo.controller;
 
 import com.demo.pojo.University;
 import com.demo.service.UniversityService;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * @Date 2020/12/25 16:24
  * @Version 1.0
  */
-@Controller
+@RestController
 public class UniversityController {
 
     //注入业务实现接口bean对象
@@ -36,11 +36,10 @@ public class UniversityController {
 
         //访问业务实现接口，获取到需要的信息
         List<University> list = universityService.queryByPro(professionName, universityArea);
-
         //模型封装获取到的数据
         model.addAttribute("list", list);
 
-        //返回到展示视图界面
+
         return "/university/list";
     }
 
