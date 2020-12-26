@@ -21,7 +21,7 @@ import java.util.List;
  * @Version 1.0
  */
 
-@RestController
+@Controller
 public class UniversityController {
 
     //注入业务实现接口bean对象
@@ -39,7 +39,7 @@ public class UniversityController {
      * @throws Exception
      */
 
-  @RequestMapping("/profession")
+  @RequestMapping("/college")
     public String queryByPro(Model model, String universityName,String universityArea,String universityType,Integer pageNum) throws Exception {
       //判断是否获得页码
       pageNum = pageNum == null ? 1 : pageNum;
@@ -52,7 +52,7 @@ public class UniversityController {
       //封装模型数据
       model.addAttribute("list", list);
       model.addAttribute("pageInfo", pageInfo);
-      return "pages/role/rolelist";
+      return "university/list";
   }
 
 
@@ -66,7 +66,7 @@ public class UniversityController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/colleges")
+    @RequestMapping("/profession")
     public String queryByColleges(Model model,String professionName,String universityArea,String admitTp,Integer pageNum) throws Exception {
        //判断是否获取到页码
         pageNum=pageNum==null?1:pageNum;
@@ -77,10 +77,10 @@ public class UniversityController {
         //将查询到的数据封装到分页中
         PageInfo<University> pageInfo1= new PageInfo<>(list1,10);
         //封装模型数据
-        model.addAttribute("list1",list1);
+        model.addAttribute("colleges",list1);
         model.addAttribute("pageInfo1",pageInfo1);
         //返回到页面进行展示
-        return "user/";
+        return "university/profression";
     }
 
     /**
@@ -106,7 +106,7 @@ public class UniversityController {
         model.addAttribute("list1",list1);
         model.addAttribute("pageInfo1",pageInfo1);
         //返回到页面进行展示
-        return "NIMA/";
+        return "university/mark";
     }
 
 }

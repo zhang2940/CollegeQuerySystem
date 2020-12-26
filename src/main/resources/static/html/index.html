@@ -50,16 +50,24 @@
 						<div class="search" style="text-align: left; margin-left: 10px;">
 							<p style="font-size: 15px;"><i class="fa fa-search lg"></i>&emsp;大学搜索</p>
 						</div>
-						<form action="/colleges" method="post">
-							<input style="width: 122px;border: 1px darkgray solid;" type="text" name="university" placeholder="院校名称" />
+						<form action="/college" method="post">
+							<input style="width: 122px;border: 1px darkgray solid;" type="text" name="universityName" placeholder="院校名称" />
 							<br>
-							<select name="city" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
+<!--							这里是地区搜索-->
+							<select name="universityArea" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
 								<option>北京</option>
+								<option>重庆</option>
+								<option>广西</option>
+								<option>江西</option>
 							</select>
 							<br>
-							<select style="width: 125px;border: 1px #EEEEEE solid;color: darkgray;" name="univerKind">
+							<select style="width: 125px;border: 1px #EEEEEE solid;color: darkgray;" name="universityType">
 								<option hidden="hidden">请选择种类</option>
-								<option value="">本科</option>
+								<option value="本科">本科</option>
+								<option value="985">985</option>
+								<option value="211">211</option>
+								<option value="专科">专科</option>
+								<option value="预科">预科</option>
 							</select>
 							<br>
 							<input type="submit" value="搜索" style="background-color: rgb(197,30,11);color: white;width: 122px;border:1px whitesmoke solid;margin-top: 5px;"/>
@@ -70,15 +78,20 @@
 							<p style="font-size: 15px;"><i class="fa fa-search lg"></i>&emsp;专业搜索</p>
 						</div>
 						<form action="/profession" method="post">
-							<input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="university" placeholder="院校名称" />
+							<input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="professionName" placeholder="专业名字" />
 							<br>
-							<select name="city" style="width: 125px;border: whitesmoke 1px solid;color: darkgray;">
-								<option hidden="hidden">请选择地区</option>
+							<select name="universityArea" style="width: 125px;border: whitesmoke 1px solid;color: darkgray;">
+								<option hidden="hidden">大学所在地</option>
+								<option value="重庆">重庆</option>
+								<option value="北京">北京</option>
+								<option value="广西">广西</option>
+								<option value="贵州">贵州</option>
 							</select>
 							<br>
-							<select style="color: darkgray;width: 125px;border: 1px #EEEEEE solid;" name="profression">
-								<option hidden="hidden">请选择专业</option>
-								<option value="">计算机应用技术</option>
+							<select style="color: darkgray;width: 125px;border: 1px #EEEEEE solid;" name="admitTp">
+								<option hidden="hidden">文理</option>
+								<option value="文科">文科</option>
+								<option value="理科">理科</option>
 							</select>
 							<br>
 							<input type="submit" value="搜索" style="color: white;background-color:  rgb(197,30,11);width: 122px;border:1px whitesmoke solid;margin-top: 5px;"/>
@@ -88,16 +101,20 @@
 						<div class="search" style="text-align: left; margin-left: 10px;">
 							<p style="font-size: 15px;font-weight: 100;"><i class="fa fa-search lg"></i>&emsp;各地区分数线</p>
 						</div>
-						<form action="" method="post">
-							<input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="university" placeholder="院校名称" />
+						<form action="/score" method="post">
+							<input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="universityName" placeholder="院校名称" />
 							<br>
 							<!--        院校所在地区-->
-							<select name="city" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
-								<option>北京</option>
+							<select name="universityName" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
+								<option hidden="hidden">院校所在地区</option>
+								<option value="北京">北京</option>
+								<option value="贵州">贵州</option>
+								<option value="重庆">重庆</option>
+								<option value="广西">广西</option>
 							</select>
 							<br>
 							<!--        户籍所在地-->
-							<select style="width: 125px;color: darkgray;border: 1px #EEEEEE solid;" name="univerKind">
+							<select style="width: 125px;color: darkgray;border: 1px #EEEEEE solid;" name="admitArea">
 								<option hidden="hidden">户籍所在地</option>
 								<option value="">贵州</option>
 								<option value="">北京</option>

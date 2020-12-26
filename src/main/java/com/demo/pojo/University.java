@@ -1,5 +1,7 @@
 package com.demo.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @Date 2020/12/24 10:55
  * @Version 1.0
  */
+@Data
 public class University implements Serializable {
 
     private Integer universityId;
