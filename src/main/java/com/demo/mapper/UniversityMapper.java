@@ -28,6 +28,7 @@ public interface UniversityMapper {
             "where university_Name=#{universityName} and university_area=#{universityArea} and university_type=#{universityType} order by admit_time desc")
     public List<University> queryByPro(@Param("universityName") String universityName,@Param("universityArea") String universityArea,@Param("universityType") String universityType) throws Exception;
 
+
     /**
      *
      * @param professionName

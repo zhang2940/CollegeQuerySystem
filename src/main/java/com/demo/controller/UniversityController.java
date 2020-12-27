@@ -29,7 +29,7 @@ public class UniversityController {
     private UniversityService universityService;
 
     /**
-     * 根据院校名称、地区查询
+     * 大学搜索
      * @param model
      * @param universityName
      * @param universityArea
@@ -57,7 +57,7 @@ public class UniversityController {
 
 
     /**
-     *
+     *根据专业查询
      * @param model
      * @param professionName
      * @param
@@ -84,7 +84,7 @@ public class UniversityController {
     }
 
     /**
-     *
+     *分数查询
      * @param model
      * @param universityName
      * @param professionName

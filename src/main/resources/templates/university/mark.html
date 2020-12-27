@@ -65,6 +65,8 @@
                 <option>重庆</option>
                 <option>广西</option>
                 <option>江西</option>
+                <option>贵州</option>
+                <option>广西</option>
             </select>
             <br>
             <select style="width: 125px;border: 1px #EEEEEE solid;color: darkgray;" name="universityType">
@@ -92,6 +94,7 @@
                 <option value="北京">北京</option>
                 <option value="广西">广西</option>
                 <option value="贵州">贵州</option>
+
             </select>
             <br>
             <select style="color: darkgray;width: 125px;border: 1px #EEEEEE solid;" name="admitTp">
@@ -109,8 +112,9 @@
         </div>
         <form action="/score" method="post">
             <input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="universityName" placeholder="院校名称" />
-            <br>
-            <!--        院校所在地区-->
+            <input style="width: 122px;border: 1px #EEEEEE solid;" type="text" name="professionName" placeholder="专业名称" />
+         <!--   <br>
+            &lt;!&ndash;        院校所在地区&ndash;&gt;
             <select name="universityName" style="color: darkgray;width: 125px;border: whitesmoke 1px solid;">
                 <option hidden="hidden">院校所在地区</option>
                 <option value="北京">北京</option>
@@ -118,14 +122,14 @@
                 <option value="重庆">重庆</option>
                 <option value="广西">广西</option>
             </select>
-            <br>
+            <br>-->
             <!--        户籍所在地-->
             <select style="width: 125px;color: darkgray;border: 1px #EEEEEE solid;" name="admitArea">
                 <option hidden="hidden">户籍所在地</option>
-                <option value="">贵州</option>
-                <option value="">北京</option>
-                <option value="">重庆</option>
-                <option value="">武汉</option>
+                <option value="贵州">贵州</option>
+                <option value="北京">北京</option>
+                <option value="重庆">重庆</option>
+                <option value="武汉">武汉</option>
             </select>
             <br>
             <input type="submit" value="搜索" style="color: white;background-color:  rgb(197,30,11);width: 122px;border:1px whitesmoke solid;margin-top: 5px;"/>

@@ -22,5 +22,6 @@ public class University implements Serializable {
     private String professionName;//专业名
     private String admitTp;//文理科
     private Integer admitTime;//年份，往年的录取分数线
+    private String moreInformation;//详情
 
 }
