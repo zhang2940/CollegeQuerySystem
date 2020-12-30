@@ -49,7 +49,7 @@ public interface UniversityMapper {
      * @return
      * @throws Exception
      */
-    @Select("select university_type,university_area,admit_tp,admit_time from university " +
+    @Select("select university_type,university_area,admit_tp,admit_grade,admit_time from university " +
             "where university_name=#{universityName} and profession_name=#{professionName} and admit_area=#{admitArea} order by admit_time desc")
     public List<University> queryByScore(@Param("universityName") String universityName,@Param("professionName") String professionName,@Param("admitArea") String admitArea) throws Exception;
 

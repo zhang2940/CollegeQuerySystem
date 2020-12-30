@@ -145,6 +145,7 @@
             <td style="border-top: none">高校地区</td>
             <td style="border-top: none">高校类型</td>
             <td style="border-top: none">专业类型</td>
+            <td style="border-top: none">分数线</td>
             <td style="border-right: none;border-top: none">分数线时间</td>
         </tr>
         </thead>
@@ -154,6 +155,7 @@
                     <td th:text="${mark.universityArea}"></td>
                     <td th:text="${mark.universityType}"></td>
                     <td th:text="${mark.admitTp}"></td>
+                    <td th:text="${mark.admitGrade}"></td>
                     <td style="border-right: none" th:text="${mark.admitTime}"></td>
                 </tr>
         </tbody>
